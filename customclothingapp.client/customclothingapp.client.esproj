@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.1184077">
+  <PropertyGroup>
+    <StartupCommand>npm run dev</StartupCommand>
+    <JavaScriptTestRoot>.\</JavaScriptTestRoot>
+    <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
+    <!-- Allows the build (or compile) script located on package.json to run on Build -->
+    <ShouldRunBuildScript>false</ShouldRunBuildScript>
+    <!-- Folder where production build objects will be placed -->
+    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="src\components\Categories\**" />
+    <None Remove="src\components\Chat\**" />
+    <None Remove="src\components\Constructor\**" />
+    <None Remove="src\components\Notifications\**" />
+    <None Remove="src\components\Order\**" />
+    <TypeScriptConfiguration Remove="src\components\Categories\**" />
+    <TypeScriptConfiguration Remove="src\components\Chat\**" />
+    <TypeScriptConfiguration Remove="src\components\Constructor\**" />
+    <TypeScriptConfiguration Remove="src\components\Notifications\**" />
+    <TypeScriptConfiguration Remove="src\components\Order\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\router\" />
+  </ItemGroup>
+</Project>

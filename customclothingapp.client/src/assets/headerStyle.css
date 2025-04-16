@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --dark-color: hsl(0, 0%, 10%);
+    --gray-color: hsl(0, 0%, 60%);
+    --light-color: hsl(0, 0%, 100%);
+    --primary-color: hsl(210, 85%, 45%);
+    --primary-color-hover: hsl(210, 85%, 35%);
+    --border-color-dark: hsl(10, 95%, 70%);
+    --border-color-normal: hsl(10, 95%, 83%);
+    --border-color-light: hsl(10, 95%, 93%);
+    --dark-rose: #d17f91; /* Новый темно-розовый для кнопки */
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.25s;
+}
+
+button {
+    background: transparent;
+    border: 2px solid var(--gray-color);
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.875em;
+    font-weight: 600;
+    height: 2.5em;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    padding: 0 1em;
+    color: var(--dark-color);
+}
+
+    button:hover {
+        background: var(--primary-color);
+        color: var(--light-color);
+        border-color: var(--primary-color-hover);
+    }
+
+/* Измененная кнопка "Корзина" */
+.ghost-button {
+    border: 2px solid var(--gray-color);
+    font-size: 1rem;
+    padding: 0.5em 1.5em;
+    min-width: 9em;
+    transition: all 0.3s ease-in-out;
+}
+
+    .ghost-button:hover {
+        background: var(--dark-rose); /* Темно-розовый фон при наведении */
+        color: var(--light-color);
+        border-color: var(--dark-rose); /* Темно-розовая граница */
+    }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--light-color);
+    border-bottom: 2px solid var(--gray-color);
+    min-height: 10vh;
+}
+
+img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+p {
+    color: var(--gray-color);
+    font-size: 1rem;
+    margin: 0.5em 0;
+}
+
+/* CONTAINERS */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* HEADER NAVIGATION */
+.logo-link {
+    color: var(--dark-color);
+    font-size: 1.25em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.25s;
+}
+
+    .logo-link:hover {
+        color: var(--primary-color);
+    }
+
+.header-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-menu {
+    display: flex;
+    gap: 1.5rem; /* Уменьшен отступ между вкладками */
+    align-items: center;
+    list-style-type: none; /* Убираем маркеры (точки) у элементов списка */
+    padding-left: 0; /* Убираем отступ слева */
+}
+
+.header-menu-link {
+    display: block;
+    background-color: #f7d7e3; /* Светло-розовый фон */
+    color: var(--dark-color); /* Черный текст */
+    padding: 0.75em 1.5em; /* Уменьшен размер блока */
+    font-size: 0.9rem; /* Уменьшен размер шрифта */
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+    .header-menu-link:hover {
+        background-color: #f5b1cc; /* Темный розовый при наведении */
+        color: #fff; /* Белый текст */
+    }
+
+/* MOBILE AND DESKTOP ADAPTATION */
+@media (max-width: 768px) {
+    .header-menu {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .ghost-button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header-nav {
+        flex-wrap: nowrap;
+    }
+
+    .header-menu {
+        flex-direction: row;
+    }
+}
